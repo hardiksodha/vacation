@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerala Trip 2026 — Mar 21–27</title>
+<style>
+:root {
+  --green:#1B5E20;--lgreen:#2E7D32;--gbg:#E8F5E9;
+  --gold:#F9A825;--goldbg:#FFF8E1;
+  --blue:#1565C0;--bluebg:#E3F2FD;
+  --red:#C62828;--redbg:#FFEBEE;
+  --orange:#E65100;--orangebg:#FFF3E0;
+  --text:#1a1a1a;--muted:#666;
+  --bg:#F4F6F0;--card:#fff;--border:#E0E0E0;
+  --shadow:0 2px 12px rgba(0,0,0,0.09);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#1B5E20 0%,#2E7D32 45%,#1565C0 100%);color:#fff;padding:56px 20px 40px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'🌿';font-size:200px;position:absolute;right:-40px;bottom:-60px;opacity:0.08;line-height:1}
+.hero h1{font-size:2.6rem;font-weight:800;letter-spacing:-1px;margin-bottom:6px}
+.hero .sub{font-size:1.1rem;opacity:.85;margin-bottom:28px}
+.hero-stats{display:flex;justify-content:center;gap:36px;flex-wrap:wrap}
+.hstat .n{font-size:2rem;font-weight:800;color:var(--gold)}
+.hstat .l{font-size:0.78rem;opacity:.75;text-transform:uppercase;letter-spacing:1px;margin-top:-4px}
+.route-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:50px;padding:8px 20px;font-size:0.9rem;margin-bottom:24px}
+
+/* NAV */
+.daynav{position:sticky;top:0;z-index:200;background:var(--green);overflow-x:auto;white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,0.25)}
+.daynav::-webkit-scrollbar{height:3px}
+.daynav::-webkit-scrollbar-thumb{background:var(--gold)}
+.daynav a{display:inline-block;padding:13px 18px;color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;transition:all .2s;border-bottom:3px solid transparent}
+.daynav a:hover,.daynav a.act{color:#fff;border-bottom-color:var(--gold);background:rgba(255,255,255,0.1)}
+
+/* LAYOUT */
+.container{max-width:1080px;margin:0 auto;padding:0 16px}
+.sec{padding:52px 0;border-bottom:1px solid var(--border)}
+.sec-head{text-align:center;margin-bottom:28px}
+.sec-head h2{font-size:1.7rem;color:var(--green);margin-bottom:4px}
+.sec-head p{color:var(--muted);font-size:.9rem}
+.sec-head .icon{font-size:2rem;display:block;margin-bottom:6px}
+
+/* DAY HEADER */
+.day-hdr{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.dbadge{background:var(--green);color:#fff;width:58px;height:58px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;line-height:1.1}
+.dbadge .dn{font-size:1.15rem}
+.dbadge .dd{font-size:0.65rem;opacity:.8}
+.day-title h3{font-size:1.35rem;color:var(--green);font-weight:700}
+.day-title .dt{color:var(--muted);font-size:.88rem}
+.day-title .drt{font-size:.82rem;color:var(--blue);font-weight:600;margin-top:2px}
+
+/* MAP BOX */
+.mapbox{background:var(--bluebg);border:1px solid #90CAF9;border-radius:12px;padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.mapbox .mi{font-size:2.2rem;flex-shrink:0}
+.mapbox .minfo{flex:1;min-width:160px}
+.mapbox .minfo h4{color:var(--blue);font-size:.95rem;font-weight:700;margin-bottom:2px}
+.mapbox .minfo p{color:var(--muted);font-size:.82rem}
+.mapbtn{background:var(--blue);color:#fff;padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.88rem;white-space:nowrap;transition:background .2s;display:inline-flex;align-items:center;gap:6px}
+.mapbtn:hover{background:#0D47A1}
+
+/* KM ROW */
+.kmrow{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.kmcard{background:var(--goldbg);border:1px solid #FFE082;border-radius:10px;padding:12px 18px;text-align:center;flex:1;min-width:110px}
+.kmcard .kv{font-size:1.35rem;font-weight:800;color:var(--orange)}
+.kmcard .kl{font-size:.76rem;color:var(--muted);margin-top:1px}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:28px;margin-bottom:20px}
+.tl::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--green),var(--blue))}
+.tli{position:relative;margin-bottom:16px}
+.tli::before{content:'';position:absolute;left:-23px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--gold);border:2.5px solid var(--green)}
+.tlt{font-size:.76rem;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px}
+.tlc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 15px;box-shadow:var(--shadow)}
+.tlc h4{font-size:.92rem;font-weight:700;margin-bottom:3px}
+.tlc p{font-size:.83rem;color:var(--muted)}
+.tlc .note{font-size:.8rem;color:var(--blue);margin-top:4px;font-style:italic}
+tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.72rem;font-weight:700;margin-right:4px;margin-top:4px}
+.tf{background:var(--orangebg);color:var(--orange)}
+.th{background:var(--gbg);color:var(--green)}
+.ta{background:var(--bluebg);color:var(--blue)}
+.tw{background:#F3E5F5;color:#6A1B9A}
+.talert{background:var(--redbg);color:var(--red)}
+
+/* TIPS */
+.tips2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+@media(max-width:560px){.tips2{grid-template-columns:1fr}}
+.tdo,.tdont{border-radius:10px;padding:13px}
+.tdo{background:var(--gbg);border-left:4px solid var(--green)}
+.tdont{background:var(--redbg);border-left:4px solid var(--red)}
+.tdo h5{color:var(--green);font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px}
+.tdont h5{color:var(--red);font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px}
+.tdo ul,.tdont ul{list-style:none}
+.tdo ul li,.tdont ul li{font-size:.83rem;padding:2px 0;color:var(--text)}
+.tdo ul li::before{content:'✓  ';color:var(--green);font-weight:700}
+.tdont ul li::before{content:'✗  ';color:var(--red);font-weight:700}
+
+/* WARN */
+.warn{background:#FFF8E1;border:1px solid #FFD54F;border-left:4px solid var(--gold);border-radius:8px;padding:11px 15px;font-size:.84rem;color:#5D4037;margin-bottom:14px}
+.warn strong{color:var(--orange)}
+.info{background:var(--bluebg);border:1px solid #90CAF9;border-left:4px solid var(--blue);border-radius:8px;padding:11px 15px;font-size:.84rem;color:#0D47A1;margin-bottom:14px}
+
+/* DISTANCE CHART */
+.dchart{margin-top:16px}
+.drow{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.dlbl{width:52px;font-size:.83rem;font-weight:700;color:var(--text);flex-shrink:0}
+.dbar-w{flex:1;background:#eee;border-radius:6px;height:26px;overflow:hidden}
+.dbar{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 10px;background:linear-gradient(90deg,var(--green),#43A047)}
+.dbar span{font-size:.78rem;font-weight:700;color:#fff;white-space:nowrap}
+.dtm{width:58px;font-size:.78rem;color:var(--muted);text-align:right;flex-shrink:0}
+.dtotal{background:var(--goldbg);border:2px solid var(--gold);border-radius:10px;padding:14px 18px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px;margin-top:18px}
+.dtotal .tv{font-size:1.5rem;font-weight:800;color:var(--orange);text-align:center}
+.dtotal .tl2{font-size:.78rem;color:var(--muted);text-align:center;text-transform:uppercase;letter-spacing:.5px}
+
+/* SIGHTSEEING */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px;margin-top:18px}
+.scard{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border)}
+.simg{height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative}
+.simg .sloc{position:absolute;bottom:8px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:.72rem;padding:3px 9px;border-radius:20px;font-weight:600}
+.sbody{padding:15px}
+.sbody h3{font-size:1rem;color:var(--green);font-weight:700;margin-bottom:2px}
+.sbody .sday{font-size:.75rem;color:var(--muted);margin-bottom:8px}
+.sbody p{font-size:.82rem;color:var(--muted);margin-bottom:10px}
+.dd2{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.dos2,.dnt2{border-radius:7px;padding:9px}
+.dos2{background:var(--gbg)}
+.dnt2{background:var(--redbg)}
+.dos2 h6{color:var(--green);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}
+.dnt2 h6{color:var(--red);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}
+.dos2 ul,.dnt2 ul{list-style:none;font-size:.76rem}
+.dos2 ul li::before{content:'✓ ';color:var(--green);font-weight:700}
+.dnt2 ul li::before{content:'✗ ';color:var(--red);font-weight:700}
+
+/* CONTACTS */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;margin-top:18px}
+.ccard{background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow);border:1px solid var(--border);display:flex;gap:12px}
+.cico{font-size:2rem;flex-shrink:0;padding-top:2px}
+.cinfo h4{font-size:.92rem;font-weight:700;margin-bottom:1px}
+.ctype{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.cphone{display:flex;align-items:center;gap:7px;text-decoration:none}
+.cphone span{font-size:1rem;font-weight:800;color:var(--green)}
+.cphone:hover span{color:var(--lgreen)}
+.copybtn{background:var(--gbg);border:none;border-radius:5px;padding:3px 8px;font-size:.72rem;color:var(--green);cursor:pointer;font-weight:700;transition:.2s}
+.copybtn:hover{background:var(--green);color:#fff}
+.cnote{font-size:.78rem;color:var(--muted);margin-top:5px}
+.cstatus{font-size:.75rem;font-weight:700;margin-top:4px}
+.cstatus.ok{color:var(--green)}
+.cstatus.pending{color:var(--orange)}
+
+/* PACK */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:18px}
+.pcard{background:var(--card);border-radius:12px;padding:15px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.pcard h4{color:var(--green);font-size:.88rem;font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:6px}
+.pcard ul{list-style:none;font-size:.83rem}
+.pcard ul li{padding:2px 0;color:var(--text)}
+.pcard ul li::before{content:'□ ';color:#bbb}
+
+/* AVOIDS */
+.alist{background:var(--card);border-radius:12px;padding:20px;box-shadow:var(--shadow);border:1px solid var(--border)}
+.alist ul{list-style:none}
+.alist ul li{padding:7px 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--text)}
+.alist ul li:last-child{border-bottom:none}
+.alist ul li::before{content:'⚠ ';color:var(--orange)}
+
+/* CLOSURE TABLE */
+.ctbl{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.ctbl th{background:var(--green);color:#fff;padding:10px 14px;text-align:left;font-size:.82rem;text-transform:uppercase;letter-spacing:.5px}
+.ctbl td{padding:10px 14px;font-size:.85rem;border-bottom:1px solid var(--border)}
+.ctbl tr:last-child td{border-bottom:none}
+.ctbl tr:nth-child(even) td{background:#FAFAFA}
+.ok2{color:var(--green);font-weight:700}
+.bad2{color:var(--red);font-weight:700}
+
+/* FOOD TABLE */
+.ftbl{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.ftbl th{background:var(--orange);color:#fff;padding:9px 13px;text-align:left;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+.ftbl td{padding:9px 13px;font-size:.84rem;border-bottom:1px solid var(--border)}
+.ftbl tr:last-child td{border-bottom:none}
+.ftbl tr:nth-child(even) td{background:#FAFAFA}
+.rating{font-weight:700;color:var(--orange)}
+
+/* FOOTER */
+footer{background:var(--green);color:rgba(255,255,255,.8);text-align:center;padding:24px 16px;font-size:.84rem}
+footer strong{color:#fff}
+footer a{color:var(--gold);text-decoration:none}
+
+/* EMERGENCY */
+.egrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:16px}
+.ecard{background:var(--redbg);border:1px solid #EF9A9A;border-radius:10px;padding:14px;text-align:center}
+.ecard .en{font-size:1.6rem;font-weight:800;color:var(--red);display:block}
+.ecard .el{font-size:.8rem;color:var(--muted);margin-top:2px}
+
+@media(max-width:700px){
+  .hero h1{font-size:1.7rem}
+  .sgrid{grid-template-columns:1fr}
+  .dd2{grid-template-columns:1fr}
+  .tips2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>🌿 Kerala 2026</h1>
+  <div class="sub">March 21 – 27 &nbsp;·&nbsp; Kochi → Munnar → Thekkady → Alleppey → Kochi</div>
+  <div class="route-pill">✈ Arrive 2:30 AM Mar 21 &nbsp;·&nbsp; 7 Days &nbsp;·&nbsp; 4 Destinations</div>
+  <div class="hero-stats">
+    <div class="hstat"><div class="n">639</div><div class="l">Total KMs</div></div>
+    <div class="hstat"><div class="n">7</div><div class="l">Days</div></div>
+    <div class="hstat"><div class="n">44</div><div class="l">Stops</div></div>
+    <div class="hstat"><div class="n">22.5h</div><div class="l">Drive Time</div></div>
+    <div class="hstat"><div class="n">5</div><div class="l">Hotels</div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="daynav">
+  <a href="#day1">Day 1 · Mar 21</a>
+  <a href="#day2">Day 2 · Mar 22</a>
+  <a href="#day3">Day 3 · Mar 23</a>
+  <a href="#day4">Day 4 · Mar 24</a>
+  <a href="#day5">Day 5 · Mar 25</a>
+  <a href="#day6">Day 6 · Mar 26</a>
+  <a href="#day7">Day 7 · Mar 27</a>
+  <a href="#distances">📊 KMs</a>
+  <a href="#sightseeing">🏛 Sights</a>
+  <a href="#contacts">📞 Contacts</a>
+  <a href="#packing">🎒 Packing</a>
+  <a href="#food">🍛 Food</a>
+</nav>
+
+<div class="container">
+
+<!-- ═══════════════ DAY 1 ═══════════════ -->
+<div class="sec" id="day1">
+  <div class="day-hdr">
+    <div class="dbadge"><span class="dn">D1</span><span class="dd">Mar 21</span></div>
+    <div class="day-title">
+      <h3>Airport → Munnar</h3>
+      <div class="dt">Saturday, March 21 &nbsp;·&nbsp; Arrive 2:30 AM</div>
+      <div class="drt">Cochin Airport → Treebo (Angamaly) → Aveda Mountains & Mist (Anachal)</div>
+    </div>
+  </div>
+
+  <div class="warn"><strong>⚠ Overnight Arrival:</strong> You land at 2:30 AM — go straight to Treebo transit hotel, sleep immediately. Most tiring day of the trip. Take motion sickness tablet before the mountain stretch after Adimali.</div>
+
+  <div class="mapbox">
+    <div class="mi">🗺</div>
+    <div class="minfo">
+      <h4>Day 1 Google Maps Route</h4>
+      <p>Airport → Treebo → Cheeyappara → Aryaas → Aveda → Pothamedu → Rooh Ayurveda → Mahaveer</p>
+    </div>
+    <a class="mapbtn" href="https://www.google.com/maps/dir/Cochin+International+Airport,+Nedumbassery/Treebo+Trend+Amigos+Residency,+Angamaly,+Kerala/Cheeyappara+Waterfalls,+Neriamangalam,+Kerala/Hotel+Aryaas,+Adimali,+Kerala/Aveda+Mountains+and+Mist,+Anachal,+Munnar,+Kerala/Pothamedu+Viewpoint,+Munnar,+Kerala/Rooh+Ayurveda,+Anachal,+Munnar,+Kerala/Sree+Mahaveer+Restaurant,+Anachal,+Munnar,+Kerala" target="_blank">📍 Open Maps</a>
+  </div>
+
+  <div class="kmrow">
+    <div class="kmcard"><div class="kv">~136 km</div><div class="kl">Day Total</div></div>
+    <div class="kmcard"><div class="kv">~5.5 hrs</div><div class="kl">Drive Time</div></div>
+    <div class="kmcard"><div class="kv">118 km</div><div class="kl">Airport → Munnar</div></div>
+    <div class="kmcard"><div class="kv">8 stops</div><div class="kl">On Route</div></div>
+  </div>
+
+  <div class="tl">
+    <div class="tli">
+      <div class="tlt">02:30 AM</div>
+      <div class="tlc"><h4>✈ Arrive Cochin International Airport</h4><p>Clear immigration, collect bags. Driver should be waiting.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">03:00 – 09:00</div>
+      <div class="tlc"><h4>🏨 Treebo Trend Amigos Residency <tag class="th">Hotel</tag></h4><p>1 km from airport. 4.4/5 rated. Airport shuttle available. <strong>Sleep immediately. Set alarm 08:15.</strong> Do not browse phone.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">09:30</div>
+      <div class="tlc"><h4>🚗 Start drive to Munnar (118 km)</h4><p>Route: Kochi → Kothamangalam → Neriamangalam → Adimali → Munnar. Ask driver to avoid Aluva–Perumbavoor route.</p><p class="note">🚌 Sit front seat if prone to motion sickness. Mountain curves begin after Neriamangalam.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">En Route ~11:00</div>
+      <div class="tlc"><h4>💧 Cheeyappara Waterfalls (5 min stop only)</h4><p>March is pre-monsoon — flow will be thin. Quick photo stop, do not build expectations.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">~12:30</div>
+      <div class="tlc"><h4>🍽 Lunch — Hotel Aryaas, Adimali <tag class="tf">Food</tag></h4><p>Kerala meals / dosa. Reliable stop. <strong>Don't overeat</strong> — mountain road ahead for 2 hrs.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">~14:00</div>
+      <div class="tlc"><h4>🏨 Check-in — Aveda Mountains & Mist, Anachal <tag class="th">Hotel</tag></h4><p>Your base for Days 1–3. Anachal area, ~13 km from Munnar town.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">~15:30</div>
+      <div class="tlc"><h4>🌄 Pothamedu Viewpoint <tag class="ta">Activity</tag></h4><p>4–5 km from Aveda. Quiet hilltop with panoramic tea estate views. Often uncrowded. 20–30 min. No entry fee.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">16:30</div>
+      <div class="tlc"><h4>💆 Ayurvedic Massage — Rooh Ayurveda, Anachal <tag class="tw">Wellness</tag></h4><p>4.9/5 rated. ~2–3 km from Aveda. Abhyangam (60 min full body warm oil). <strong>Request therapist Abhilash specifically. Book in advance.</strong></p><p class="note">Backup: Amritha Ayurveda (also Anachal, opposite Dreamland Adventure)</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">~18:30</div>
+      <div class="tlc"><h4>🍽 Dinner — Sree Mahaveer Restaurant, Anachal <tag class="tf">Food</tag></h4><p>4.5/5 · Pure veg, Jain/North Indian/Marwadi. In Anachal town — no long drive. Return hotel by 20:00. <strong>Sleep early — Day 2 is full.</strong></p></div>
+    </div>
+  </div>
+
+  <div class="tips2">
+    <div class="tdo"><h5>✅ Do</h5><ul>
+      <li>Sleep at transit hotel immediately</li>
+      <li>Take motion sickness tablet before Neriamangalam</li>
+      <li>Carry neck pillow + eye mask for transit hotel</li>
+      <li>Light snacks for the drive</li>
+      <li>Book Rooh Ayurveda in advance</li>
+    </ul></div>
+    <div class="tdont"><h5>❌ Don't</h5><ul>
+      <li>Don't browse phone at transit hotel</li>
+      <li>Don't eat heavy lunch — curves ahead</li>
+      <li>Don't expect waterfalls in March</li>
+      <li>Don't take Aluva–Perumbavoor route</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 2 ═══════════════ -->
+<div class="sec" id="day2">
+  <div class="day-hdr">
+    <div class="dbadge"><span class="dn">D2</span><span class="dd">Mar 22</span></div>
+    <div class="day-title">
+      <h3>Munnar Scenic Circuit</h3>
+      <div class="dt">Sunday, March 22 &nbsp;·&nbsp; Base: Aveda Mountains & Mist</div>
+      <div class="drt">Top Station loop → Kundala → Echo → Mattupetty → KDHP Tea Museum → Macofa → Parakkat</div>
+    </div>
+  </div>
+
+  <div class="info">💡 Top Station must be first stop — clouds build after 11 AM and visibility drops sharply. Your plan already does this correctly ✅</div>
+
+  <div class="mapbox">
+    <div class="mi">🗺</div>
+    <div class="minfo">
+      <h4>Day 2 Google Maps Route</h4>
+      <p>Aveda → Top Station → Kundala → Echo Point → Mattupetty → KDHP → Macofa → Parakkat → Mystique → Aveda</p>
+    </div>
+    <a class="mapbtn" href="https://www.google.com/maps/dir/Aveda+Mountains+and+Mist,+Anachal,+Munnar/Top+Station+Viewpoint,+Munnar,+Kerala/Kundala+Lake,+Munnar,+Kerala/Echo+Point,+Munnar,+Kerala/Mattupetty+Dam,+Munnar,+Kerala/KDHP+Tea+Museum,+Nalluthanni,+Munnar/Macofa+Chocolate+Factory,+Anachal,+Munnar/Parakkat+Spice+Merchant,+Chithirapuram,+Munnar/Mystique+Boutique+Munnar/Aveda+Mountains+and+Mist,+Anachal,+Munnar" target="_blank">📍 Open Maps</a>
+  </div>
+
+  <div class="kmrow">
+    <div class="kmcard"><div class="kv">~98 km</div><div class="kl">Day Total</div></div>
+    <div class="kmcard"><div class="kv">~3.5 hrs</div><div class="kl">Drive Time</div></div>
+    <div class="kmcard"><div class="kv">10 stops</div><div class="kl">On Circuit</div></div>
+    <div class="kmcard"><div class="kv">32 km</div><div class="kl">To Top Station</div></div>
+  </div>
+
+  <div class="tl">
+    <div class="tli">
+      <div class="tlt">08:00</div>
+      <div class="tlc"><h4>🍳 Breakfast at hotel</h4></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">08:30</div>
+      <div class="tlc"><h4>📸 Photo Point (near Munnar) <tag class="ta">Activity</tag></h4><p>10 min stop · Tea plantation shots · ~10 km from hotel</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">09:00 – 10:30</div>
+      <div class="tlc"><h4>🏔 Drive to Top Station (32 km, ~1.5 hrs winding road)</h4><p>Arrive early for clear views before clouds roll in.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">10:30 – 11:15</div>
+      <div class="tlc"><h4>⛰ Top Station Viewpoint <tag class="ta">Activity</tag></h4><p>45 min · Go to the upper viewpoint. Stunning Kerala-Tamil Nadu border views. Often cool even in March — carry a light jacket.</p><p class="note">⚠ Leave by 11:15 — clouds build fast after this</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">11:15 – 11:35</div>
+      <div class="tlc"><h4>🏞 Kundala Lake</h4><p>20 min · Peaceful. Arch dam. Good photo stop.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">11:45 – 11:55</div>
+      <div class="tlc"><h4>📣 Echo Point</h4><p>10 min only · Often noisy and crowded. Skip if too busy.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">12:05 – 12:30</div>
+      <div class="tlc"><h4>🌊 Mattupetty Dam</h4><p>25 min · Park before entrance gate for better lake photos. <strong>No boating 12–2 PM.</strong></p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">12:50 – 13:35</div>
+      <div class="tlc"><h4>🍵 KDHP Tea Museum, Nalluthanni <tag class="ta">Activity</tag></h4><p>45 min · Open Sundays ✅ · Tea tasting session worth it (₹100 extra). Go early before tour groups arrive.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">13:40 – 14:00</div>
+      <div class="tlc"><h4>🍫 Macofa Chocolate Factory, Anachal</h4><p>20 min · <strong>Buy minimal — chocolate melts in March heat</strong> within hours of purchase.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">14:00 – 15:00</div>
+      <div class="tlc"><h4>🍽 Lunch — Parakkat Spice Merchant, Chithirapuram <tag class="tf">Food</tag></h4><p>4.9/5 · Valley views · Upgraded from Saravana Bhavan. Excellent Kerala food.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">15:00 – 15:45</div>
+      <div class="tlc"><h4>👗 Mystique Boutique, Munnar town</h4><p>Buy Kasavu Mundu/Saree for temple visit on Day 6. On main road Munnar town.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">Evening (Optional)</div>
+      <div class="tlc"><h4>🌸 Blossom Hydel Park</h4><p>If back by 16:30 · Small flower garden · 5 km from Munnar town · Colourful and relaxed · Or simply return to Aveda for valley views with tea.</p></div>
+    </div>
+  </div>
+
+  <div class="tips2">
+    <div class="tdo"><h5>✅ Do</h5><ul>
+      <li>Carry light jacket (Top Station can be cool)</li>
+      <li>Go to Top Station before 11 AM</li>
+      <li>Take tea tasting at KDHP (₹100 extra)</li>
+      <li>Park before dam gate for better photos</li>
+      <li>Buy Kasavu saree/mundu at Mystique</li>
+    </ul></div>
+    <div class="tdont"><h5>❌ Don't</h5><ul>
+      <li>Don't go to Top Station after 11 AM</li>
+      <li>Don't buy excess chocolate (melts fast)</li>
+      <li>Don't linger at Echo Point if crowded</li>
+      <li>Don't expect boating at dam 12–2 PM</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 3 ═══════════════ -->
+<div class="sec" id="day3">
+  <div class="day-hdr">
+    <div class="dbadge"><span class="dn">D3</span><span class="dd">Mar 23</span></div>
+    <div class="day-title">
+      <h3>Munnar → Thekkady</h3>
+      <div class="dt">Monday, March 23 &nbsp;·&nbsp; Checkout Aveda → Lemon Tree Thekkady</div>
+      <div class="drt">Scenic Bison Valley route · Lockhart Gap · Lockhart Tea Factory · Poopara Valley</div>
+    </div>
+  </div>
+
+  <div class="info">💡 This is arguably the most scenic drive of the trip. Sit on the <strong>right side</strong> of the car going Munnar → Thekkady for the best valley views.</div>
+
+  <div class="mapbox">
+    <div class="mi">🗺</div>
+    <div class="minfo">
+      <h4>Day 3 Google Maps Route</h4>
+      <p>Aveda → Lockhart Gap → Lockhart Tea Factory → Poopara → Lemon Tree Thekkady → Abraham's Spice Garden → Athidhi Dinner</p>
+    </div>
+    <a class="mapbtn" href="https://www.google.com/maps/dir/Aveda+Mountains+and+Mist,+Anachal,+Munnar/Lockhart+Gap+Viewpoint,+Munnar,+Kerala/Lockhart+Tea+Factory,+Munnar,+Kerala/Poopara+Village,+Idukki,+Kerala/Lemon+Tree+Hotel+Thekkady,+Kumily,+Kerala/Abraham+Spice+Garden,+Thekkady,+Kerala/Athidhi+Restaurant,+Kumily,+Kerala" target="_blank">📍 Open Maps</a>
+  </div>
+
+  <div class="kmrow">
+    <div class="kmcard"><div class="kv">~114 km</div><div class="kl">Day Total</div></div>
+    <div class="kmcard"><div class="kv">~4.0 hrs</div><div class="kl">Drive Time</div></div>
+    <div class="kmcard"><div class="kv">100 km</div><div class="kl">Munnar → Thekkady</div></div>
+    <div class="kmcard"><div class="kv">7 stops</div><div class="kl">On Route</div></div>
+  </div>
+
+  <div class="tl">
+    <div class="tli">
+      <div class="tlt">07:30</div>
+      <div class="tlc"><h4>🍳 Breakfast | 08:30 Checkout</h4><p>Keep luggage ready. Scenic route takes ~3–4 hrs.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">En Route ~09:00</div>
+      <div class="tlc"><h4>🌄 Hidden Tea Valley Viewpoint</h4><p>Easy to miss — <strong>tell driver specifically.</strong> Short stop just before Lockhart estate. Often better photos than main viewpoints.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">En Route ~09:15</div>
+      <div class="tlc"><h4>🏔 Lockhart Gap Viewpoint <tag class="ta">Activity</tag></h4><p>15 min · One of the best valley viewpoints on this road. Stunning panorama.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">En Route ~09:30</div>
+      <div class="tlc"><h4>🍵 Lockhart Tea Factory <tag class="ta">Activity</tag></h4><p>45 min · Tea tasting included. <strong>Go early before tour groups arrive.</strong> Don't rush this — one of the best factory visits on the trip.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">En Route ~11:00</div>
+      <div class="tlc"><h4>📸 Poopara Tea Valley</h4><p>Quick roadside photo stop only. Beautiful landscape views.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">~12:30</div>
+      <div class="tlc"><h4>🏨 Arrive & Check-in — Lemon Tree Hotel Thekkady <tag class="th">Hotel</tag></h4><p>Kumily. Your base for Days 3–5 (2 nights).</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">13:30</div>
+      <div class="tlc"><h4>🍽 Lunch — Spice Garden Restaurant, Kumily <tag class="tf">Food</tag></h4><p>4.4/5 · Multi-cuisine. Try their Kerala fish curry.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">15:00 – 16:00</div>
+      <div class="tlc"><h4>😴 Rest at hotel</h4><p>Good prep for early Day 4 safari (5:30 AM wakeup).</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">16:00 – 17:15</div>
+      <div class="tlc"><h4>🌿 Abraham's Spice Garden <tag class="ta">Activity</tag></h4><p>₹200 entry · Guided tour by Mr. Abraham (speaks 6 languages) · Cardamom, pepper, cinnamon, nutmeg, vanilla · 45–60 min · Very informative.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">~19:30</div>
+      <div class="tlc"><h4>🍽 Dinner — Athidhi Veg, Kumily <tag class="tf">Food</tag></h4><p>3.9/5 · Backup: Grandma's Cafe, Kumily (cosy, classic rock vibe, good vegetarian options)</p></div>
+    </div>
+  </div>
+
+  <div class="tips2">
+    <div class="tdo"><h5>✅ Do</h5><ul>
+      <li>Sit right side of car for valley views</li>
+      <li>Ask driver to stop at Hidden Tea Valley Viewpoint</li>
+      <li>Don't rush Lockhart Tea Factory (it's excellent)</li>
+      <li>Carry light jacket for morning mountain road</li>
+      <li>Rest in afternoon — 5:30 AM next day</li>
+    </ul></div>
+    <div class="tdont"><h5>❌ Don't</h5><ul>
+      <li>Don't eat heavy before mountain drive</li>
+      <li>Don't skip Lockhart — one of the best stops</li>
+      <li>Don't visit Ariya Bhavan (hygiene issues)</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 4 ═══════════════ -->
+<div class="sec" id="day4">
+  <div class="day-hdr">
+    <div class="dbadge"><span class="dn">D4</span><span class="dd">Mar 24</span></div>
+    <div class="day-title">
+      <h3>Periyar Wildlife Day</h3>
+      <div class="dt">Tuesday, March 24 &nbsp;·&nbsp; Base: Lemon Tree Thekkady</div>
+      <div class="drt">Periyar Boat Safari → Elephant Junction → Kumily → Mudra Cultural Centre → Dinner</div>
+    </div>
+  </div>
+
+  <div class="warn"><strong>⚠ Most demanding day:</strong> 5:30 AM departure → 14-hour active day. Post-lunch rest is mandatory. If exhausted after lunch, <strong>skip Mudra show</strong> — evening spice market walk is a good alternative.</div>
+
+  <div class="mapbox">
+    <div class="mi">🗺</div>
+    <div class="minfo">
+      <h4>Day 4 Google Maps Route</h4>
+      <p>Lemon Tree → Periyar Lake Jetty → Elephant Junction → Kumily Town → Mudra Cultural Centre → Bar-B-Que → Lemon Tree</p>
+    </div>
+    <a class="mapbtn" href="https://www.google.com/maps/dir/Lemon+Tree+Hotel+Thekkady,+Kumily/Periyar+Lake+Boat+Jetty,+Thekkady,+Kerala/Elephant+Junction+Thekkady,+Kerala/Kumily+Town,+Thekkady,+Kerala/Mudra+Cultural+Centre,+Kumily,+Kerala/Bar-B-Que+Restaurant+Ambadi+Junction,+Thekkady,+Kerala/Lemon+Tree+Hotel+Thekkady,+Kumily" target="_blank">📍 Open Maps</a>
+  </div>
+
+  <div class="kmrow">
+    <div class="kmcard"><div class="kv">~25 km</div><div class="kl">Day Total</div></div>
+    <div class="kmcard"><div class="kv">~1.0 hr</div><div class="kl">Drive Time</div></div>
+    <div class="kmcard"><div class="kv">Lightest</div><div class="kl">Drive Day</div></div>
+    <div class="kmcard"><div class="kv">14 hrs</div><div class="kl">Active Day</div></div>
+  </div>
+
+  <div class="tl">
+    <div class="tli">
+      <div class="tlt">05:30 AM ⚠</div>
+      <div class="tlc"><h4>🚗 Leave hotel <tag class="talert">CRITICAL TIME</tag></h4><p>Plan says 05:45 — must be <strong>05:30</strong>. Park requires you at Aanavachal counter 1 hour before safari = 06:30 AM. Carry warm layer — pre-dawn is cool.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">06:30</div>
+      <div class="tlc"><h4>🎫 Aanavachal Parking Counter</h4><p>Collect safari tickets here. Already booked ✅</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">07:30 – 09:00</div>
+      <div class="tlc"><h4>🚤 Periyar Lake Boat Safari <tag class="ta">Activity</tag></h4><p>✅ Booked · Sit upper deck for wildlife views · Likely sightings: Elephant, Gaur, Sambar deer, birds · Morning light is best — golden hour on water · <strong>Keep noise minimal — wildlife retreats with sound.</strong></p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">09:30</div>
+      <div class="tlc"><h4>🍳 Breakfast at hotel / nearby</h4></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">11:00 – 11:45</div>
+      <div class="tlc"><h4>🐘 Elephant Junction <tag class="ta">Activity</tag></h4><p>✅ Booked · Feeding + bathing + photos · Very interactive · ~5 km from hotel.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">~12:30</div>
+      <div class="tlc"><h4>🍽 Lunch — Spice Garden Restaurant or Kumily town <tag class="tf">Food</tag></h4><p>Backup: Tusker Cafe (4.4/5)</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">13:30 – 15:30 ⚠</div>
+      <div class="tlc"><h4>😴 REST AT HOTEL — Mandatory</h4><p>You've been awake since 5 AM. This is not optional — you need this for the evening programme.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">15:30</div>
+      <div class="tlc"><h4>🎭 Head to Mudra Cultural Centre, Kumily <tag class="ta">Activity</tag></h4><p>📞 Call ahead: <strong>+91 98466 95049</strong> · Arrive by 16:30 to watch Kathakali makeup — the best part.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">16:30 – 19:00</div>
+      <div class="tlc"><h4>🎭 Mudra Cultural Shows</h4><p>16:30 — Kathakali makeup viewing · 17:00–18:00 — Kathakali dance · 18:00–19:00 — Kalaripayattu martial arts</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">~19:30</div>
+      <div class="tlc"><h4>🍖 Dinner — Bar-B-Que at Ambadi Junction <tag class="tf">Food</tag></h4><p>4.0/5 · Best non-veg dinner option in Thekkady. BBQ grilled meat/seafood with local spices.</p><p class="note">Veg alternative: Ebony's Cafe (candlelit terrace, romantic atmosphere)</p></div>
+    </div>
+  </div>
+
+  <div class="tips2">
+    <div class="tdo"><h5>✅ Do</h5><ul>
+      <li>Leave hotel by 05:30 sharp (not 05:45)</li>
+      <li>Sit upper deck on safari boat</li>
+      <li>Keep silent on the boat</li>
+      <li>Arrive Mudra by 16:30 for makeup viewing</li>
+      <li>Take mandatory post-lunch rest</li>
+      <li>Carry binoculars for safari</li>
+      <li>Bring insect repellent for boat</li>
+    </ul></div>
+    <div class="tdont"><h5>❌ Don't</h5><ul>
+      <li>Don't skip post-lunch rest</li>
+      <li>Don't make noise on safari boat</li>
+      <li>Don't feed wildlife</li>
+      <li>Skip Mudra if exhausted after lunch</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 5 ═══════════════ -->
+<div class="sec" id="day5">
+  <div class="day-hdr">
+    <div class="dbadge"><span class="dn">D5</span><span class="dd">Mar 25</span></div>
+    <div class="day-title">
+      <h3>Thekkady → Alleppey</h3>
+      <div class="dt">Wednesday, March 25 &nbsp;·&nbsp; Checkout Lemon Tree → Sterling Lake Palace</div>
+      <div class="drt">Long drive 140 km · Valanjamkanam Waterfall stop · Spa · Shikara at golden hour</div>
+    </div>
+  </div>
+
+  <div class="info">💡 Alleppey is significantly hotter than Munnar/Thekkady (~33°C). Switch to light cotton from today. Carry extra water.</div>
+
+  <div class="mapbox">
+    <div class="mi">🗺</div>
+    <div class="minfo">
+      <h4>Day 5 Google Maps Route</h4>
+      <p>Lemon Tree Thekkady → Valanjamkanam Waterfall → Sterling Lake Palace Alleppey</p>
+    </div>
+    <a class="mapbtn" href="https://www.google.com/maps/dir/Lemon+Tree+Hotel+Thekkady,+Kumily,+Kerala/Valanjamkanam+Waterfall,+Kerala/Sterling+Lake+Palace+Alleppey,+Alappuzha,+Kerala" target="_blank">📍 Open Maps</a>
+  </div>
+
+  <div class="kmrow">
+    <div class="kmcard"><div class="kv">~142 km</div><div class="kl">Day Total</div></div>
+    <div class="kmcard"><div class="kv">~4.5 hrs</div><div class="kl">Drive Time</div></div>
+    <div class="kmcard"><div class="kv">140 km</div><div class="kl">Thekkady → Alleppey</div></div>
+    <div class="kmcard"><div class="kv">Heaviest</div><div class="kl">Drive Day</div></div>
+  </div>
+
+  <div class="tl">
+    <div class="tli">
+      <div class="tlt">08:00</div>
+      <div class="tlc"><h4>🍳 Breakfast | 09:00 Leave hotel</h4></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">En Route</div>
+      <div class="tlc"><h4>💧 Valanjamkanam Waterfall (quick roadside stop)</h4><p>Minor detour (~2 km). Quick photo stop on the way.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">~13:30</div>
+      <div class="tlc"><h4>🏨 Arrive & Check-in — Sterling Lake Palace, Alleppey <tag class="th">Hotel</tag></h4><p>Inspect room before unpacking. Report any issues immediately. Resort on Vembanad Lake.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">14:30 – 16:00</div>
+      <div class="tlc"><h4>💆 Resort Spa <tag class="tw">Wellness</tag></h4><p>Moved from 15:00 to 14:30 to give 30 min buffer before Shikara. Abhyangam or Shirodhara — both excellent after multiple days of driving.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">16:30 – 18:30</div>
+      <div class="tlc"><h4>🚣 Shikara Ride — Village Canals <tag class="ta">Activity</tag></h4><p>Contact Akhil: <strong>9048968684</strong> · <strong>Request village canals, NOT main channel</strong> (main channel is touristy and less authentic) · Golden hour photography — excellent timing ✅ · Carry phone for photos, light cotton.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">Evening</div>
+      <div class="tlc"><h4>🌅 Sunset at resort / Dinner</h4><p>Relax at Sterling Lake Palace. Well-paced day — enjoy the resort.</p></div>
+    </div>
+  </div>
+
+  <div class="tips2">
+    <div class="tdo"><h5>✅ Do</h5><ul>
+      <li>Specifically request village canals on Shikara</li>
+      <li>Switch to light cotton clothing</li>
+      <li>Carry SPF 50 sunscreen from today</li>
+      <li>Book spa at 14:30 (not 15:00)</li>
+      <li>Confirm Akhil slot: 9048968684</li>
+    </ul></div>
+    <div class="tdont"><h5>❌ Don't</h5><ul>
+      <li>Don't go out in Alleppey afternoon heat</li>
+      <li>Don't accept main channel on Shikara</li>
+      <li>Don't underestimate the heat (33°C)</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 6 ═══════════════ -->
+<div class="sec" id="day6">
+  <div class="day-hdr">
+    <div class="dbadge"><span class="dn">D6</span><span class="dd">Mar 26</span></div>
+    <div class="day-title">
+      <h3>Alleppey → Kochi</h3>
+      <div class="dt">Thursday, March 26 &nbsp;·&nbsp; Checkout Sterling → Keys Select Lemon Tree Kochi</div>
+      <div class="drt">Lighthouse → Marari Beach → Ambalappuzha Temple → Lunch → Mattancherry → Fort Kochi</div>
+    </div>
+  </div>
+
+  <div class="warn"><strong>⚠ Temple timing is critical:</strong> Arrive Ambalappuzha by <strong>11:30 AM sharp</strong> for palpayasam — it runs out by 12:15–12:30. Wear Kasavu saree/mundu bought in Munnar.</div>
+  <div class="warn"><strong>⚠ Mattancherry strategy:</strong> Do NOT check into hotel before visiting Mattancherry. Go directly from Indian Coffee House → Mattancherry → then hotel. Synagogue closes 17:00, Palace closes 17:00.</div>
+
+  <div class="mapbox">
+    <div class="mi">🗺</div>
+    <div class="minfo">
+      <h4>Day 6 Google Maps Route</h4>
+      <p>Sterling → Lighthouse → Marari Beach → Ambalappuzha Temple → Coffee House → Synagogue → Palace → Keys Hotel → East India Cafe</p>
+    </div>
+    <a class="mapbtn" href="https://www.google.com/maps/dir/Sterling+Lake+Palace+Alleppey,+Alappuzha,+Kerala/Alappuzha+Lighthouse,+Alappuzha,+Kerala/Marari+Beach,+Mararikulam,+Kerala/Ambalappuzha+Sree+Krishna+Temple,+Ambalappuzha,+Kerala/Indian+Coffee+House,+Mullakkal,+Alappuzha,+Kerala/Paradesi+Synagogue,+Mattancherry,+Kochi,+Kerala/Mattancherry+Palace,+Mattancherry,+Kochi,+Kerala/Keys+Select+by+Lemon+Tree+Hotels+Kochi,+Kerala/East+India+Street+Cafe,+Fort+Kochi,+Kerala" target="_blank">📍 Open Maps</a>
+  </div>
+
+  <div class="kmrow">
+    <div class="kmcard"><div class="kv">~124 km</div><div class="kl">Day Total</div></div>
+    <div class="kmcard"><div class="kv">~4.0 hrs</div><div class="kl">Drive Time</div></div>
+    <div class="kmcard"><div class="kv">9 stops</div><div class="kl">Segments</div></div>
+    <div class="kmcard"><div class="kv">6 segments</div><div class="kl">Split Drive</div></div>
+  </div>
+
+  <div class="tl">
+    <div class="tli">
+      <div class="tlt">07:30</div>
+      <div class="tlc"><h4>🍳 Breakfast | 08:00–09:30 Relax at resort</h4></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">09:30</div>
+      <div class="tlc"><h4>🧳 Checkout — Keep luggage in car</h4></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">09:45 – 10:00</div>
+      <div class="tlc"><h4>🏮 Alappuzha Lighthouse</h4><p>Quick 10 min photo stop. ~6 km from Sterling.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">10:00 – 10:30</div>
+      <div class="tlc"><h4>🏖 Marari Beach</h4><p>30 min relaxed walk. Quieter than Alleppey beach. Carry footwear you can slip off easily.</p><p class="note">⚠ Don't spend too long — tight temple window ahead</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">10:50 – 11:10</div>
+      <div class="tlc"><h4>🧵 Seematti Silks (optional)</h4><p>10–15 min only. Buy Kasavu if not done in Munnar.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">11:30 – 12:15 ⚠</div>
+      <div class="tlc"><h4>🛕 Ambalappuzha Sri Krishna Temple <tag class="ta">Activity</tag></h4><p><strong>Arrive by 11:30 for palpayasam</strong> (11:30–12:30 window). Get ticket at counter on arrival. Wear Kasavu saree/mundu. Remove footwear at entrance.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">12:45</div>
+      <div class="tlc"><h4>🍽 Lunch — Indian Coffee House, Alleppey <tag class="tf">Food</tag></h4><p>Opens 8 AM. Simple, reliable. Classic Kerala institution.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">13:30 – 15:00</div>
+      <div class="tlc"><h4>🚗 Drive to Kochi (~1.5 hrs, 55 km)</h4><p><strong>Go directly to Mattancherry — do NOT check in first.</strong></p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">15:15 – 16:00</div>
+      <div class="tlc"><h4>🕍 Paradesi Synagogue, Mattancherry <tag class="ta">Activity</tag></h4><p>Afternoon session: 15:00–17:00. Barefoot entry. Belgian chandeliers + hand-painted Chinese floor tiles. Modest clothing — shoulders covered.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">16:00 – 17:00</div>
+      <div class="tlc"><h4>🏛 Mattancherry Palace (Dutch Palace) <tag class="ta">Activity</tag></h4><p>10-min walk from synagogue. Closes ~17:00. 16th-century Kerala murals — impressive. ₹5 entry.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">17:15</div>
+      <div class="tlc"><h4>🏨 Check-in — Keys Select by Lemon Tree Kochi <tag class="th">Hotel</tag></h4><p>Fort Kochi area. Your last hotel of the trip.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">19:00</div>
+      <div class="tlc"><h4>🍽 Dinner — East India Street Cafe, Fort Kochi <tag class="tf">Food</tag></h4><p>4.5/5 · Excellent ambience · International menu · Fort Kochi landmark.</p></div>
+    </div>
+  </div>
+
+  <div class="tips2">
+    <div class="tdo"><h5>✅ Do</h5><ul>
+      <li>Arrive Ambalappuzha temple by 11:30 sharp</li>
+      <li>Wear Kasavu saree/mundu for temple</li>
+      <li>Keep small bag for temple footwear</li>
+      <li>Cover shoulders for synagogue</li>
+      <li>Go to Mattancherry BEFORE hotel check-in</li>
+      <li>Remove footwear at synagogue entrance</li>
+    </ul></div>
+    <div class="tdont"><h5>❌ Don't</h5><ul>
+      <li>Don't arrive temple after 12:15 (palpayasam runs out)</li>
+      <li>Don't check in to hotel first on Day 6</li>
+      <li>Don't spend too long at Marari Beach</li>
+      <li>No photography inside synagogue</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 7 ═══════════════ -->
+<div class="sec" id="day7">
+  <div class="day-hdr">
+    <div class="dbadge"><span class="dn">D7</span><span class="dd">Mar 27</span></div>
+    <div class="day-title">
+      <h3>Fort Kochi Heritage Walk</h3>
+      <div class="dt">Friday, March 27 &nbsp;·&nbsp; Base: Keys Select Lemon Tree, Fort Kochi</div>
+      <div class="drt">Heritage walk → Jew Town → Folklore Museum → Water Metro → Departure</div>
+    </div>
+  </div>
+
+  <div class="warn"><strong>⚠ Friday Closures:</strong> Paradesi Synagogue CLOSED on Fridays. Mattancherry Palace CLOSED on Fridays. ✅ Both done on Thursday evening — you're all clear.</div>
+
+  <div class="mapbox">
+    <div class="mi">🗺</div>
+    <div class="minfo">
+      <h4>Day 7 — Fort Kochi Walking Map</h4>
+      <p>Kashi Art Cafe → St. Francis Church → Dutch Cemetery → Santa Cruz Basilica → Jew Town → Kerala Folklore Museum → Water Metro</p>
+    </div>
+    <a class="mapbtn" href="https://www.google.com/maps/dir/Kashi+Art+Cafe,+Fort+Kochi/St.+Francis+Church,+Fort+Kochi/Dutch+Cemetery,+Fort+Kochi/Santa+Cruz+Basilica,+Fort+Kochi/Jew+Town,+Mattancherry,+Kochi/Kerala+Folklore+Museum,+Thevara,+Kochi/Fort+Kochi+Water+Metro+Station" target="_blank">📍 Open Maps</a>
+  </div>
+
+  <div class="kmrow">
+    <div class="kmcard"><div class="kv">~8 km</div><div class="kl">Walking Day</div></div>
+    <div class="kmcard"><div class="kv">~1.0 hr</div><div class="kl">Drive Time</div></div>
+    <div class="kmcard"><div class="kv">Lightest</div><div class="kl">Fatigue Day</div></div>
+    <div class="kmcard"><div class="kv">Day 7</div><div class="kl">Last Day</div></div>
+  </div>
+
+  <div class="tl">
+    <div class="tli">
+      <div class="tlt">08:30</div>
+      <div class="tlc"><h4>☕ Breakfast — Kashi Art Cafe <tag class="tf">Food</tag></h4><p>4.3/5 · Opens 8:30 AM · Fort Kochi institution · Relaxed courtyard setting.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">09:30 – 09:50</div>
+      <div class="tlc"><h4>⛪ St. Francis Church</h4><p>India's oldest European church (1503). Vasco da Gama originally buried here. 20 min.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">10:00 – 10:15</div>
+      <div class="tlc"><h4>⚰ Dutch Cemetery (1724)</h4><p>Small, quiet, historic. Graves of Dutch traders. Off the tourist trail. 15 min.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">10:20 – 10:35</div>
+      <div class="tlc"><h4>⛪ Santa Cruz Basilica</h4><p>Beautiful colonial architecture. Quick 15 min.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">11:00 – 12:00</div>
+      <div class="tlc"><h4>🏺 Jew Town + Antique Shops</h4><p>Browse antiques, spice stalls, curio shops. 45–60 min of great shopping. Synagogue exterior on Friday fine to see from outside.</p><p class="note">💡 Prices are negotiable. Don't pay first price for antiques.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">11:30 (near Jew Town)</div>
+      <div class="tlc"><h4>👩 Women's Cooperative — Pappadam Making</h4><p>Near Jew Town. Authentic Kerala experience — local women making pappadam/pickles. Don't miss this hidden gem.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">12:15 – 13:00</div>
+      <div class="tlc"><h4>🍽 Lunch — Gokul Oottupura <tag class="tf">Food</tag></h4><p>Arrive 12:15 to avoid peak crowd. Backup: Brindhavan Vegetarian (4.4/5)</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">13:00 – 14:00</div>
+      <div class="tlc"><h4>🏺 Kerala Folklore Museum <tag class="ta">Activity</tag></h4><p><strong>Must do — 100–400 m from your hotel.</strong> Open daily. 6,000+ traditional Kerala artifacts. Outstanding architecture. Rated excellent by visitors. 1 hour. Perfect last stop.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">14:30 – 15:30</div>
+      <div class="tlc"><h4>☕ Loving Earth Yoga Cafe</h4><p>4.6/5 · Opens 12 PM · Relaxed last cafe stop before departure.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">~16:00</div>
+      <div class="tlc"><h4>⛴ Water Metro — Fort Kochi → High Court Station</h4><p>Modern, scenic, comfortable. Drops you close to hotel. Great last experience of Kerala.</p></div>
+    </div>
+    <div class="tli">
+      <div class="tlt">Evening</div>
+      <div class="tlc"><h4>🧳 Return hotel → Pack → Depart for flight</h4></div>
+    </div>
+  </div>
+
+  <div class="tips2">
+    <div class="tdo"><h5>✅ Do</h5><ul>
+      <li>Wear comfortable walking shoes (cobblestones)</li>
+      <li>Visit Kerala Folklore Museum — it's steps from hotel</li>
+      <li>Negotiate prices in Jew Town antique shops</li>
+      <li>Take Water Metro for a scenic last experience</li>
+      <li>Light lunch — travelling soon after</li>
+    </ul></div>
+    <div class="tdont"><h5>❌ Don't</h5><ul>
+      <li>Don't expect synagogue/palace open (Friday)</li>
+      <li>Don't pay first price for antiques</li>
+      <li>Don't eat heavy at lunch</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- ═══════════════ DISTANCES ═══════════════ -->
+<div class="sec" id="distances">
+  <div class="sec-head">
+    <span class="icon">📊</span>
+    <h2>Distance Overview</h2>
+    <p>Total trip: ~639 km across 6 driving days</p>
+  </div>
+
+  <div class="dchart">
+    <div class="drow">
+      <div class="dlbl">Day 1</div>
+      <div class="dbar-w"><div class="dbar" style="width:95%"><span>~136 km · Airport → Munnar</span></div></div>
+      <div class="dtm">5.5 hrs</div>
+    </div>
+    <div class="drow">
+      <div class="dlbl">Day 2</div>
+      <div class="dbar-w"><div class="dbar" style="width:68%"><span>~98 km · Munnar circuit</span></div></div>
+      <div class="dtm">3.5 hrs</div>
+    </div>
+    <div class="drow">
+      <div class="dlbl">Day 3</div>
+      <div class="dbar-w"><div class="dbar" style="width:79%"><span>~114 km · Munnar → Thekkady</span></div></div>
+      <div class="dtm">4.0 hrs</div>
+    </div>
+    <div class="drow">
+      <div class="dlbl">Day 4</div>
+      <div class="dbar-w"><div class="dbar" style="width:17%" style="background:linear-gradient(90deg,#43A047,#66BB6A)"><span>~25 km · Local Thekkady</span></div></div>
+      <div class="dtm">1.0 hr</div>
+    </div>
+    <div class="drow">
+      <div class="dlbl">Day 5</div>
+      <div class="dbar-w"><div class="dbar" style="width:99%"><span>~142 km · Thekkady → Alleppey</span></div></div>
+      <div class="dtm">4.5 hrs</div>
+    </div>
+    <div class="drow">
+      <div class="dlbl">Day 6</div>
+      <div class="dbar-w"><div class="dbar" style="width:86%"><span>~124 km · Alleppey → Kochi</span></div></div>
+      <div class="dtm">4.0 hrs</div>
+    </div>
+  </div>
+
+  <div class="dtotal">
+    <div><div class="tv">~639 km</div><div class="tl2">Total Distance</div></div>
+    <div><div class="tv">~22.5 hrs</div><div class="tl2">Total Drive Time</div></div>
+    <div><div class="tv">~107 km</div><div class="tl2">Average / Day</div></div>
+    <div><div class="tv">Day 5</div><div class="tl2">Heaviest Drive</div></div>
+    <div><div class="tv">Day 4</div><div class="tl2">Lightest Day</div></div>
+  </div>
+
+  <div style="margin-top:24px">
+    <h3 style="color:var(--green);margin-bottom:12px">⚠ Closure Status — All Attractions</h3>
+    <table class="ctbl">
+      <tr><th>Attraction</th><th>Closed On</th><th>Your Visit</th><th>Status</th></tr>
+      <tr><td>KDHP Tea Museum</td><td>Mondays</td><td>Sunday Day 2</td><td class="ok2">✅ CLEAR</td></tr>
+      <tr><td>Eravikulam National Park</td><td>Jan–Apr (calving)</td><td>Entire trip</td><td class="bad2">❌ CLOSED — DO NOT PLAN</td></tr>
+      <tr><td>Paradesi Synagogue</td><td>Fri, Sat, Jewish holidays</td><td>Done Thu eve (Day 6)</td><td class="ok2">✅ DONE THURSDAY</td></tr>
+      <tr><td>Mattancherry Palace</td><td>Friday</td><td>Done Thu eve (Day 6)</td><td class="ok2">✅ DONE THURSDAY</td></tr>
+      <tr><td>Mudra Cultural Centre</td><td>Sunday</td><td>Tuesday Day 4</td><td class="ok2">✅ CLEAR</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════ SIGHTSEEING ═══════════════ -->
+<div class="sec" id="sightseeing">
+  <div class="sec-head">
+    <span class="icon">🏛</span>
+    <h2>Sightseeing Guide</h2>
+    <p>Dos, Don'ts & Key Info for every major attraction</p>
+  </div>
+
+  <div class="sgrid">
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#1B5E20,#43A047)">
+        <span style="font-size:4rem">⛰</span>
+        <span class="sloc">📍 Munnar · Day 2</span>
+      </div>
+      <div class="sbody">
+        <h3>Top Station Viewpoint</h3>
+        <div class="sday">Munnar · Day 2 · Free Entry · Kerala–Tamil Nadu border</div>
+        <p>Highest point on the Munnar–Kodaikanal road at ~1700m. Stunning valley views of Tamil Nadu tea estates. Go early — clouds build rapidly after 11 AM.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Arrive by 10:30 AM</li><li>Go to upper viewpoint</li><li>Carry light jacket</li><li>Go early for clear skies</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Don't go after 11 AM</li><li>Don't litter</li><li>Don't expect crowds (good thing)</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#1565C0,#42A5F5)">
+        <span style="font-size:4rem">🏞</span>
+        <span class="sloc">📍 Munnar · Day 2</span>
+      </div>
+      <div class="sbody">
+        <h3>Kundala Lake</h3>
+        <div class="sday">Munnar · Day 2 · 20 min stop</div>
+        <p>Serene arch dam lake surrounded by tea and eucalyptus. Popular for pedal boating. Peaceful stop on way back from Top Station.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Good reflection photos</li><li>20 min is enough</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Don't over-schedule here</li><li>Don't skip Top Station for this</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#2E7D32,#81C784)">
+        <span style="font-size:4rem">🌊</span>
+        <span class="sloc">📍 Munnar · Day 2</span>
+      </div>
+      <div class="sbody">
+        <h3>Mattupetty Dam</h3>
+        <div class="sday">Munnar · Day 2 · 25 min stop</div>
+        <p>Beautiful reservoir surrounded by tea gardens and shola forests. Popular for boating (avoid 12–2 PM). Park before entrance gate for best lake photos.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Park before entrance gate</li><li>Morning visit best</li><li>Good reflections early</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>No boating 12–2 PM</li><li>Don't litter near lake</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#4E342E,#795548)">
+        <span style="font-size:4rem">🍵</span>
+        <span class="sloc">📍 Munnar · Day 2</span>
+      </div>
+      <div class="sbody">
+        <h3>KDHP Tea Museum</h3>
+        <div class="sday">Munnar · Day 2 · Open Sundays ✅ · ~45 min</div>
+        <p>Learn the complete journey of Munnar tea from plantation to cup. Tea tasting session is a highlight (₹100 extra). Go early before tour groups arrive.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Take the tea tasting (₹100)</li><li>Go early morning</li><li>Check opening hours</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Closed Mondays</li><li>Don't rush the tasting</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#558B2F,#9CCC65)">
+        <span style="font-size:4rem">🌿</span>
+        <span class="sloc">📍 Munnar · Day 3</span>
+      </div>
+      <div class="sbody">
+        <h3>Lockhart Tea Factory</h3>
+        <div class="sday">Munnar–Thekkady route · Day 3 · 45 min · Free tasting</div>
+        <p>One of the most authentic tea factory experiences on the route. Go early before tour groups arrive. Tea tasting included. Don't rush this.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Go early (pre-tour groups)</li><li>Take full factory tour</li><li>Ask questions — staff very helpful</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Don't rush (it's excellent)</li><li>Don't skip for time</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#1A237E,#3949AB)">
+        <span style="font-size:4rem">🚤</span>
+        <span class="sloc">📍 Thekkady · Day 4</span>
+      </div>
+      <div class="sbody">
+        <h3>Periyar Lake Boat Safari</h3>
+        <div class="sday">Thekkady · Day 4 · Booked ✅ · 07:30–09:00</div>
+        <p>Wildlife boat safari on Periyar Lake inside Periyar Tiger Reserve. Likely sightings: elephant, gaur, sambar deer, various birds. Morning golden light is spectacular.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Sit upper deck</li><li>Arrive counter by 06:30 AM</li><li>Bring binoculars</li><li>Insect repellent</li><li>Keep silent on boat</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Don't make noise</li><li>Don't feed animals</li><li>Don't use flash</li><li>Don't be late (06:30!)</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#E65100,#FF8F00)">
+        <span style="font-size:4rem">🐘</span>
+        <span class="sloc">📍 Thekkady · Day 4</span>
+      </div>
+      <div class="sbody">
+        <h3>Elephant Junction</h3>
+        <div class="sday">Thekkady · Day 4 · Booked ✅ · ~11:00 AM</div>
+        <p>Interactive elephant experience — feeding, bathing, and close-up photos with elephants. Very family-friendly and memorable. ~5 km from hotel.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Wear clothes you don't mind getting wet</li><li>Follow guide instructions</li><li>Move slowly around elephants</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>No flash photography</li><li>Don't startle elephants</li><li>Don't bring food for them unsanctioned</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#880E4F,#C2185B)">
+        <span style="font-size:4rem">🎭</span>
+        <span class="sloc">📍 Thekkady · Day 4</span>
+      </div>
+      <div class="sbody">
+        <h3>Mudra Cultural Centre</h3>
+        <div class="sday">Kumily · Day 4 · Tue–Sun ✅ · 📞 +91 98466 95049</div>
+        <p>Kathakali dance-drama and Kalaripayattu martial arts performances. Arrive by 16:30 to watch Kathakali makeup being applied — the best part of the show.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Arrive 16:30 for makeup</li><li>Call ahead to confirm</li><li>Watch both shows (Kathakali + Kalaripayattu)</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Closed Sundays</li><li>Skip if exhausted after safari day</li><li>Don't use flash during performance</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#006064,#00838F)">
+        <span style="font-size:4rem">🚣</span>
+        <span class="sloc">📍 Alleppey · Day 5</span>
+      </div>
+      <div class="sbody">
+        <h3>Shikara Backwater Ride</h3>
+        <div class="sday">Alleppey · Day 5 · 16:30–18:30 · Contact: Akhil 9048968684</div>
+        <p>Traditional wooden boat ride through Kerala backwaters. Golden hour timing is perfect for photography. Village canals are far more authentic than the busy main channel.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Request village canals specifically</li><li>Go at 16:30 for golden hour</li><li>Light cotton clothing</li><li>Carry phone for photos</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Don't accept main channel</li><li>Don't litter in backwaters</li><li>Don't go in midday heat</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#B71C1C,#E53935)">
+        <span style="font-size:4rem">🛕</span>
+        <span class="sloc">📍 Ambalappuzha · Day 6</span>
+      </div>
+      <div class="sbody">
+        <h3>Ambalappuzha Sri Krishna Temple</h3>
+        <div class="sday">Alappuzha · Day 6 · Arrive 11:30 AM sharp for palpayasam</div>
+        <p>Famous for the legendary palpayasam (sweet rice pudding) served as prasadam daily. The legend of the chessboard and unlimited palpayasam dates to the 8th century AD. Wear Kasavu for entry.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Arrive by 11:30 AM</li><li>Wear Kasavu saree/mundu</li><li>Remove footwear at entrance</li><li>Get ticket at counter</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Don't arrive after 12:15 (runs out)</li><li>Don't wear revealing clothes</li><li>Photography rules — follow signs</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#4A148C,#7B1FA2)">
+        <span style="font-size:4rem">🕍</span>
+        <span class="sloc">📍 Mattancherry · Day 6</span>
+      </div>
+      <div class="sbody">
+        <h3>Paradesi Synagogue</h3>
+        <div class="sday">Mattancherry · Day 6 (Thu eve) · 15:00–17:00 session · Barefoot entry</div>
+        <p>India's oldest active synagogue (1568). Belgian chandeliers, hand-painted Chinese floor tiles (no two tiles identical). Small but stunning interior. 2-min walk from Mattancherry Palace.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Remove footwear at entrance</li><li>Cover shoulders</li><li>Arrive 15:00–16:30</li><li>Walk through Jew Town after</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>No photography inside</li><li>Closed Fri, Sat & Jewish holidays</li><li>Don't touch artifacts</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#37474F,#607D8B)">
+        <span style="font-size:4rem">🏛</span>
+        <span class="sloc">📍 Mattancherry · Day 6</span>
+      </div>
+      <div class="sbody">
+        <h3>Mattancherry Palace</h3>
+        <div class="sday">Mattancherry · Day 6 (Thu eve) · Closes 17:00 · ₹5 entry</div>
+        <p>Built by Portuguese in 1555, later renovated by Dutch. Famous for exceptional 16th-century Kerala murals depicting scenes from Ramayana and Mahabharata. A must for art lovers.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Arrive before 16:30</li><li>See the Kerala mural gallery</li><li>Allow 45–60 min</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>No photography of murals inside</li><li>Closed Fridays — do Thursday</li><li>Don't rush the mural room</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#0D47A1,#1976D2)">
+        <span style="font-size:4rem">🏺</span>
+        <span class="sloc">📍 Kochi · Day 7</span>
+      </div>
+      <div class="sbody">
+        <h3>Kerala Folklore Museum</h3>
+        <div class="sday">Thevara, Kochi · Day 7 · Open Daily · ~1 hour · 100–400m from hotel</div>
+        <p>6,000+ traditional Kerala artifacts across multiple floors. Outstanding architecture — the building itself is a restored Kerala heritage structure. One of the most underrated museums in Kerala.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Don't skip — steps from hotel</li><li>Allow 60 min minimum</li><li>Great last cultural stop</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Don't leave without seeing it</li><li>Don't rush through it</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#1B5E20,#388E3C)">
+        <span style="font-size:4rem">🌿</span>
+        <span class="sloc">📍 Thekkady · Day 3</span>
+      </div>
+      <div class="sbody">
+        <h3>Abraham's Spice Garden</h3>
+        <div class="sday">Thekkady · Day 3 · ₹200 entry · Guided tour</div>
+        <p>Guided spice garden tour by Mr. Abraham who speaks 6 languages. See cardamom, pepper, cinnamon, nutmeg, vanilla growing live. Very informative 45–60 min experience.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Take the guided tour (Mr. Abraham)</li><li>Smell and touch the spices</li><li>Ask questions freely</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Don't rush the tour</li><li>Don't pick plants without permission</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="simg" style="background:linear-gradient(135deg,#004D40,#00695C)">
+        <span style="font-size:4rem">🌄</span>
+        <span class="sloc">📍 Munnar · Day 1</span>
+      </div>
+      <div class="sbody">
+        <h3>Pothamedu Viewpoint</h3>
+        <div class="sday">Anachal, Munnar · Day 1 · Free · 20–30 min</div>
+        <p>Quiet hilltop with panoramic views of tea, coffee and cardamom plantations. Only 4–5 km from Aveda hotel. Often uncrowded. Perfect short walk before your evening massage.</p>
+        <div class="dd2">
+          <div class="dos2"><h6>✅ Do</h6><ul><li>Visit before sunset</li><li>Great photography spot</li><li>Peaceful and uncrowded</li></ul></div>
+          <div class="dnt2"><h6>❌ Don't</h6><ul><li>Don't go after sunset (dark road)</li><li>Don't skip — it's very close</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ CONTACTS ═══════════════ -->
+<div class="sec" id="contacts">
+  <div class="sec-head">
+    <span class="icon">📞</span>
+    <h2>Hotels & Contact Directory</h2>
+    <p>All key contacts for your trip — tap to call</p>
+  </div>
+
+  <h3 style="color:var(--green);margin:20px 0 12px;font-size:1.1rem">🏨 Hotels</h3>
+  <div class="cgrid">
+
+    <div class="ccard">
+      <div class="cico">🏨</div>
+      <div class="cinfo">
+        <h4>Treebo Trend Amigos Residency</h4>
+        <div class="ctype">Transit Hotel · Day 1 · Angamaly (1 km from Airport)</div>
+        <a class="cphone" href="tel:+918907040400">
+          <span>+91 8907 040 400</span>
+          <button class="copybtn" onclick="navigator.clipboard.writeText('+918907040400');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+        </a>
+        <div class="cnote">Airport shuttle available · 4.4/5 rating · Check-in 03:00 AM</div>
+        <div class="cstatus ok">✅ Night of Mar 20–21 (transit)</div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="cico">🌿</div>
+      <div class="cinfo">
+        <h4>Aveda Mountains & Mist</h4>
+        <div class="ctype">Hotel · Days 1–3 · Anachal, Munnar</div>
+        <a class="cphone" href="tel:+914865254200">
+          <span>+91 4865 254 200</span>
+          <button class="copybtn" onclick="navigator.clipboard.writeText('+914865254200');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+        </a>
+        <div class="cnote">Mar 21–23 (2 nights) · Tea estate views · Anachal area</div>
+        <div class="cstatus ok">✅ 2 nights — Munnar base</div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="cico">🍋</div>
+      <div class="cinfo">
+        <h4>Lemon Tree Hotel Thekkady</h4>
+        <div class="ctype">Hotel · Days 3–5 · Kumily, Thekkady</div>
+        <a class="cphone" href="tel:+914869224747">
+          <span>+91 4869 224 747</span>
+          <button class="copybtn" onclick="navigator.clipboard.writeText('+914869224747');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+        </a>
+        <div class="cnote">Mar 23–25 (2 nights) · Kumily town center</div>
+        <div class="cstatus ok">✅ 2 nights — Thekkady base</div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="cico">🛶</div>
+      <div class="cinfo">
+        <h4>Sterling Lake Palace</h4>
+        <div class="ctype">Resort · Day 5–6 · Alleppey (Alappuzha)</div>
+        <a class="cphone" href="tel:+914772231000">
+          <span>+91 477 223 1000</span>
+          <button class="copybtn" onclick="navigator.clipboard.writeText('+914772231000');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+        </a>
+        <div class="cnote">Mar 25–26 (1 night) · Vembanad Lake resort · Spa + Shikara</div>
+        <div class="cstatus ok">✅ 1 night — Alleppey base</div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="cico">🗝</div>
+      <div class="cinfo">
+        <h4>Keys Select by Lemon Tree Hotels</h4>
+        <div class="ctype">Hotel · Days 6–7 · Fort Kochi, Kochi</div>
+        <a class="cphone" href="tel:+914843010101">
+          <span>+91 484 301 0101</span>
+          <button class="copybtn" onclick="navigator.clipboard.writeText('+914843010101');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+        </a>
+        <div class="cnote">Mar 26–27 (1 night) · Fort Kochi area · Kerala Folklore Museum nearby</div>
+        <div class="cstatus ok">✅ 1 night — Kochi base</div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 style="color:var(--green);margin:28px 0 12px;font-size:1.1rem">🎯 Activities & Guides</h3>
+  <div class="cgrid">
+
+    <div class="ccard">
+      <div class="cico">🚤</div>
+      <div class="cinfo">
+        <h4>Periyar Boat Safari</h4>
+        <div class="ctype">Thekkady · Day 4 · 07:30 AM</div>
+        <div class="cphone"><span>Pre-Booked ✅</span></div>
+        <div class="cnote">Arrive Aanavachal counter by <strong>06:30 AM</strong>. Leave hotel by 05:30 AM.</div>
+        <div class="cstatus ok">✅ Already booked</div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="cico">🐘</div>
+      <div class="cinfo">
+        <h4>Elephant Junction</h4>
+        <div class="ctype">Thekkady · Day 4 · ~11:00 AM</div>
+        <a class="cphone" href="tel:+919447181144">
+          <span>+91 9447 181 144</span>
+          <button class="copybtn" onclick="navigator.clipboard.writeText('+919447181144');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+        </a>
+        <div class="cnote">Slot already booked for 11:00 AM</div>
+        <div class="cstatus ok">✅ Already booked</div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="cico">🎭</div>
+      <div class="cinfo">
+        <h4>Mudra Cultural Centre</h4>
+        <div class="ctype">Kumily, Thekkady · Day 4 · 16:30 makeup | 17:00 show</div>
+        <a class="cphone" href="tel:+919846695049">
+          <span>+91 98466 95049</span>
+          <button class="copybtn" onclick="navigator.clipboard.writeText('+919846695049');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+        </a>
+        <div class="cnote">Call ahead to confirm show timings. Closed Sundays.</div>
+        <div class="cstatus pending">⚠ Confirm booking</div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="cico">🚣</div>
+      <div class="cinfo">
+        <h4>Akhil — Shikara Guide</h4>
+        <div class="ctype">Alleppey · Day 5 · 16:30–18:30</div>
+        <a class="cphone" href="tel:+919048968684">
+          <span>+91 90489 68684</span>
+          <button class="copybtn" onclick="navigator.clipboard.writeText('+919048968684');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+        </a>
+        <div class="cnote">Confirm slot. Request <strong>village canals, not main channel.</strong></div>
+        <div class="cstatus pending">⚠ Confirm slot</div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="cico">💆</div>
+      <div class="cinfo">
+        <h4>Rooh Ayurveda, Anachal</h4>
+        <div class="ctype">Anachal, Munnar · Day 1 · 16:30 slot</div>
+        <a class="cphone" href="tel:+919447000000">
+          <span>Search: Rooh Ayurveda Anachal</span>
+        </a>
+        <div class="cnote">Book in advance. <strong>Request therapist Abhilash specifically.</strong> Backup: Amritha Ayurveda (opposite Dreamland Adventure, Anachal)</div>
+        <div class="cstatus pending">⚠ Book in advance</div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="cico">🌿</div>
+      <div class="cinfo">
+        <h4>Abraham's Spice Garden</h4>
+        <div class="ctype">Thekkady · Day 3 · ~16:00</div>
+        <a class="cphone" href="tel:+914869222132">
+          <span>+91 4869 222 132</span>
+          <button class="copybtn" onclick="navigator.clipboard.writeText('+914869222132');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+        </a>
+        <div class="cnote">₹200 entry. Guided by Mr. Abraham — speaks 6 languages.</div>
+        <div class="cstatus ok">✅ Walk-in ok</div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 style="color:var(--red);margin:28px 0 12px;font-size:1.1rem">🚨 Emergency Contacts</h3>
+  <div class="egrid">
+    <div class="ecard"><a href="tel:100" style="text-decoration:none"><span class="en">100</span><div class="el">Police</div></a></div>
+    <div class="ecard"><a href="tel:108" style="text-decoration:none"><span class="en">108</span><div class="el">Ambulance / Emergency</div></a></div>
+    <div class="ecard"><a href="tel:101" style="text-decoration:none"><span class="en">101</span><div class="el">Fire</div></a></div>
+    <div class="ecard"><a href="tel:18004254747" style="text-decoration:none"><span class="en" style="font-size:1.1rem">1800 425 4747</span><div class="el">Kerala Tourist Police (Toll Free)</div></a></div>
+    <div class="ecard"><a href="tel:04842360120" style="text-decoration:none"><span class="en" style="font-size:1.1rem">0484 236 0120</span><div class="el">Kochi Tourist Help Desk</div></a></div>
+    <div class="ecard"><a href="tel:1363" style="text-decoration:none"><span class="en">1363</span><div class="el">Kerala Tourism Helpline</div></a></div>
+  </div>
+</div>
+
+<!-- ═══════════════ FOOD ═══════════════ -->
+<div class="sec" id="food">
+  <div class="sec-head">
+    <span class="icon">🍛</span>
+    <h2>Restaurant Guide</h2>
+    <p>All recommended restaurants — day by day</p>
+  </div>
+  <table class="ftbl">
+    <tr><th>Day</th><th>Meal</th><th>Restaurant</th><th>Rating</th><th>Notes</th></tr>
+    <tr><td>Day 1</td><td>Lunch</td><td>Hotel Aryaas, Adimali</td><td class="rating">~4.0</td><td>Kerala meals / dosa. Don't overeat before curves.</td></tr>
+    <tr><td>Day 1</td><td>Dinner</td><td>Sree Mahaveer Restaurant, Anachal</td><td class="rating">4.5</td><td>Pure veg, Jain/Marwadi. In Anachal — no long drive.</td></tr>
+    <tr><td>Day 2</td><td>Lunch</td><td>Parakkat Spice Merchant, Chithirapuram</td><td class="rating">4.9 ⭐</td><td>Valley views. Best lunch of the trip. Near Munnar.</td></tr>
+    <tr><td>Day 2</td><td>Dinner (opt)</td><td>Underground Charcoal Grill, Munnar</td><td class="rating">4.7</td><td>Rooftop. Optional if back early.</td></tr>
+    <tr><td>Day 3</td><td>Lunch</td><td>Spice Garden Restaurant, Kumily</td><td class="rating">4.4</td><td>Multi-cuisine. Try Kerala fish curry.</td></tr>
+    <tr><td>Day 3</td><td>Dinner</td><td>Athidhi Veg, Kumily</td><td class="rating">3.9</td><td>Backup: Grandma's Cafe Kumily (cosy, classic rock)</td></tr>
+    <tr><td>Day 4</td><td>Lunch</td><td>Spice Garden / Tusker Cafe</td><td class="rating">4.4</td><td>After safari and Elephant Junction.</td></tr>
+    <tr><td>Day 4</td><td>Dinner</td><td>Bar-B-Que Ambadi Junction (non-veg)</td><td class="rating">4.0</td><td>Veg alt: Ebony's Cafe (candlelit, romantic)</td></tr>
+    <tr><td>Day 6</td><td>Lunch</td><td>Indian Coffee House, Mullakkal, Alleppey</td><td class="rating">Classic</td><td>Opens 8 AM. Simple, reliable. Kerala institution.</td></tr>
+    <tr><td>Day 6</td><td>Dinner</td><td>East India Street Cafe, Fort Kochi</td><td class="rating">4.5</td><td>Excellent ambience. International menu.</td></tr>
+    <tr><td>Day 7</td><td>Breakfast</td><td>Kashi Art Cafe, Fort Kochi</td><td class="rating">4.3</td><td>Opens 8:30 AM. Courtyard setting. Must visit.</td></tr>
+    <tr><td>Day 7</td><td>Lunch</td><td>Gokul Oottupura</td><td class="rating">4.4</td><td>Arrive 12:15 to avoid crowd. Backup: Brindhavan Veg.</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════ PACKING ═══════════════ -->
+<div class="sec" id="packing">
+  <div class="sec-head">
+    <span class="icon">🎒</span>
+    <h2>Packing Checklist</h2>
+    <p>Day-wise essentials — don't leave without these</p>
+  </div>
+
+  <div class="pgrid">
+    <div class="pcard">
+      <h4>📦 Every Day</h4>
+      <ul>
+        <li>Water bottle (1.5–2L from Day 5)</li>
+        <li>Phone + portable charger</li>
+        <li>Sunscreen (SPF 50 from Day 5)</li>
+        <li>Small cash (many vendors no UPI)</li>
+        <li>Medicines (personal)</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>🌙 Day 1 — Arrival Night</h4>
+      <ul>
+        <li>Neck pillow + eye mask</li>
+        <li>Motion sickness tablet</li>
+        <li>Light snacks for 4-hr drive</li>
+        <li>Water for drive</li>
+        <li>Phone charged before landing</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>⛰ Day 2 — Top Station</h4>
+      <ul>
+        <li>Light jacket (cool at Top Station)</li>
+        <li>Camera / phone fully charged</li>
+        <li>Comfortable walking shoes</li>
+        <li>Snacks for long circuit</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>🍵 Day 3 — Scenic Drive</h4>
+      <ul>
+        <li>Light jacket (morning mountain road)</li>
+        <li>Camera for tea valley shots</li>
+        <li>Comfortable shoes for Lockhart</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>🦁 Day 4 — Safari</h4>
+      <ul>
+        <li>Warm layer (5:30 AM pre-dawn)</li>
+        <li>Insect repellent (boat)</li>
+        <li>Binoculars (optional)</li>
+        <li>Clothes ok to get slightly wet (elephant)</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>🛶 Day 5 — Alleppey</h4>
+      <ul>
+        <li>Light cotton clothes (33°C!)</li>
+        <li>Sunscreen SPF 50</li>
+        <li>Swimwear for resort spa</li>
+        <li>Extra water bottle</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>🛕 Day 6 — Temple + Kochi</h4>
+      <ul>
+        <li>Kasavu saree / dhoti for temple</li>
+        <li>Small bag for footwear at temple</li>
+        <li>Modest outfit (shoulders covered) for synagogue</li>
+        <li>Sunscreen (hot day)</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <h4>🚶 Day 7 — Heritage Walk</h4>
+      <ul>
+        <li>Comfortable walking shoes (cobblestones)</li>
+        <li>Small backpack for shopping</li>
+        <li>Light cotton clothes</li>
+        <li>Cash for antique negotiation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:24px">
+    <h3 style="color:var(--red);margin-bottom:12px;font-size:1.1rem">⚠ Common Mistakes — Avoid These</h3>
+    <div class="alist">
+      <ul>
+        <li>Do not skip the post-lunch rest on Day 4 — it's a 14-hour day</li>
+        <li>Do not eat heavy before mountain drives (Day 1, Day 3)</li>
+        <li>Do not buy excess chocolate at Macofa — March heat melts it within hours</li>
+        <li>Do not arrive at Ambalappuzha temple after 12:15 — palpayasam runs out</li>
+        <li>Do not check into hotel before visiting Mattancherry on Day 6 — you'll lose the timing window</li>
+        <li>Do not take Ariya Bhavan for Day 3 dinner (hygiene issues — removed from plan)</li>
+        <li>Do not expect full waterfalls at Cheeyappara in March (pre-monsoon)</li>
+        <li>Do not plan Eravikulam National Park — closed Jan–Apr for Nilgiri Tahr calving</li>
+        <li>Leave hotel by 05:30 on Day 4 — plan says 05:45 but that's too late</li>
+        <li>Do not accept main backwater channel on Shikara — insist on village canals</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  <strong>Kerala Trip 2026</strong> &nbsp;·&nbsp; March 21–27 &nbsp;·&nbsp; Kochi · Munnar · Thekkady · Alleppey · Fort Kochi<br>
+  <span style="opacity:.7;font-size:.8rem;margin-top:6px;display:block">Route: ~639 km · 7 days · 44 stops · Based on Kerala V4 plan</span>
+</footer>
+
+<script>
+// Highlight active nav link on scroll
+const sections = document.querySelectorAll('.sec');
+const navLinks = document.querySelectorAll('.daynav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('act');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('act');
+  });
+});
+</script>
+</body>
+</html>
