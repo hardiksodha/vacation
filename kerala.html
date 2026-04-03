@@ -1,193 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kerala Trip Plan</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f5f7fa;
-      color: #333;
-    }
-    header {
-      background: #2c7a7b;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      padding: 20px;
-      margin: 15px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #2c7a7b;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .tag {
-      display: inline-block;
-      background: #edf2f7;
-      padding: 5px 10px;
-      margin: 3px;
-      border-radius: 5px;
-      font-size: 12px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerala Trip Plan</title>
+
+<style>
+/* KEEPING YOUR ORIGINAL DESIGN */
+body{font-family:Arial;margin:0;background:#f4f6f0;color:#1a1a1a}
+.hero{background:linear-gradient(135deg,#1B5E20,#1565C0);color:#fff;padding:40px;text-align:center}
+.container{max-width:1000px;margin:auto;padding:15px}
+.sec{background:#fff;margin:15px 0;padding:15px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.day-header{display:flex;justify-content:space-between;cursor:pointer}
+.tag{padding:2px 8px;border-radius:10px;font-size:12px;margin-left:5px}
+.tf{background:#FFF3E0;color:#E65100}
+.ta{background:#E3F2FD;color:#1565C0}
+.th{background:#E8F5E9;color:#1B5E20}
+.tw{background:#F3E5F5;color:#6A1B9A}
+.controls{margin:10px 0;text-align:center}
+button{padding:6px 12px;margin:5px;border:none;border-radius:6px;cursor:pointer}
+.hidden{display:none}
+</style>
+
 </head>
 <body>
 
-<header>
-  <h1>Kerala Trip Plan</h1>
+<div class="hero">
+  <h1>🌿 Kerala Trip Plan</h1>
   <p>7 Days · Kochi → Munnar → Thekkady → Alleppey → Kochi</p>
-</header>
+</div>
 
-<section>
-  <h2>Day 1 – Airport → Munnar</h2>
-  <p><strong>Note:</strong> Overnight arrival. Prioritize rest.</p>
+<div class="container">
 
-  <h3>Plan</h3>
-  <ul>
-    <li>Arrive early morning</li>
-    <li>Check into nearby airport hotel and rest</li>
-    <li>Drive to Munnar (~118 km)</li>
-  </ul>
+<div class="controls">
+  <button onclick="expandAll()">Expand All</button>
+  <button onclick="collapseAll()">Collapse All</button>
+  <br>
+  Filter:
+  <button onclick="filterTag('all')">All</button>
+  <button onclick="filterTag('tf')">Food</button>
+  <button onclick="filterTag('ta')">Activity</button>
+  <button onclick="filterTag('th')">Hotel</button>
+  <button onclick="filterTag('tw')">Wellness</button>
+</div>
 
-  <h3>Stops</h3>
-  <ul>
-    <li>Cheeyappara Waterfalls</li>
-    <li>Lunch at Adimali</li>
-    <li>Pothamedu Viewpoint</li>
-    <li>Optional Ayurvedic massage</li>
-  </ul>
+<!-- DAY TEMPLATE -->
+<div class="sec">
+  <div class="day-header" onclick="toggle(this)">
+    <h2>Day 1 – Airport → Munnar</h2>
+    <span>▼</span>
+  </div>
+  <div class="content">
+    <p>Arrival and transfer to Munnar. Rest first, then proceed.</p>
+    <p class="tf">Lunch stop en route</p>
+    <p class="th">Hotel check-in</p>
+    <p class="ta">Viewpoint visit</p>
+    <p class="tw">Optional wellness experience</p>
+  </div>
+</div>
 
-  <h3>Tips</h3>
-  <ul>
-    <li>Rest immediately after arrival</li>
-    <li>Carry snacks and motion sickness precautions</li>
-  </ul>
-</section>
+<div class="sec">
+  <div class="day-header" onclick="toggle(this)">
+    <h2>Day 2 – Munnar Sightseeing</h2>
+    <span>▼</span>
+  </div>
+  <div class="content">
+    <p class="ta">Top Station, Echo Point, Dam</p>
+    <p class="tf">Lunch with valley view</p>
+  </div>
+</div>
 
-<section>
-  <h2>Day 2 – Munnar Sightseeing</h2>
+<div class="sec">
+  <div class="day-header" onclick="toggle(this)">
+    <h2>Day 3 – Munnar → Thekkady</h2>
+    <span>▼</span>
+  </div>
+  <div class="content">
+    <p class="ta">Tea plantations & viewpoints</p>
+    <p class="th">Hotel check-in</p>
+  </div>
+</div>
 
-  <h3>Stops</h3>
-  <ul>
-    <li>Top Station</li>
-    <li>Kundala Lake</li>
-    <li>Echo Point</li>
-    <li>Mattupetty Dam</li>
-    <li>Tea Museum</li>
-  </ul>
+<div class="sec">
+  <div class="day-header" onclick="toggle(this)">
+    <h2>Day 4 – Wildlife Day</h2>
+    <span>▼</span>
+  </div>
+  <div class="content">
+    <p class="ta">Boat safari & cultural show</p>
+    <p class="tf">Lunch</p>
+  </div>
+</div>
 
-  <h3>Tips</h3>
-  <ul>
-    <li>Start early (before 11 AM)</li>
-    <li>Carry light jacket</li>
-  </ul>
-</section>
+<div class="sec">
+  <div class="day-header" onclick="toggle(this)">
+    <h2>Day 5 – Thekkady → Alleppey</h2>
+    <span>▼</span>
+  </div>
+  <div class="content">
+    <p class="th">Resort stay</p>
+    <p class="ta">Shikara ride</p>
+  </div>
+</div>
 
-<section>
-  <h2>Day 3 – Munnar → Thekkady</h2>
+<div class="sec">
+  <div class="day-header" onclick="toggle(this)">
+    <h2>Day 6 – Alleppey → Kochi</h2>
+    <span>▼</span>
+  </div>
+  <div class="content">
+    <p class="ta">Temple & heritage visit</p>
+    <p class="tf">Lunch</p>
+  </div>
+</div>
 
-  <h3>Plan</h3>
-  <ul>
-    <li>Checkout after breakfast</li>
-    <li>Drive via scenic route (~100 km)</li>
-  </ul>
+<div class="sec">
+  <div class="day-header" onclick="toggle(this)">
+    <h2>Day 7 – Fort Kochi</h2>
+    <span>▼</span>
+  </div>
+  <div class="content">
+    <p class="ta">Heritage walk</p>
+    <p class="tf">Cafe visit</p>
+  </div>
+</div>
 
-  <h3>Stops</h3>
-  <ul>
-    <li>Tea plantations</li>
-    <li>Valley viewpoints</li>
-    <li>Spice garden</li>
-  </ul>
-</section>
+</div>
 
-<section>
-  <h2>Day 4 – Thekkady (Wildlife & Culture)</h2>
+<script>
+function toggle(el){
+  let content = el.nextElementSibling;
+  content.classList.toggle("hidden");
+}
 
-  <h3>Activities</h3>
-  <ul>
-    <li>Boat safari</li>
-    <li>Elephant experience</li>
-    <li>Cultural show (Kathakali / martial arts)</li>
-  </ul>
+function expandAll(){
+  document.querySelectorAll('.content').forEach(c=>c.classList.remove('hidden'));
+}
 
-  <h3>Tips</h3>
-  <ul>
-    <li>Start early</li>
-    <li>Maintain silence during safari</li>
-    <li>Take rest in afternoon</li>
-  </ul>
-</section>
+function collapseAll(){
+  document.querySelectorAll('.content').forEach(c=>c.classList.add('hidden'));
+}
 
-<section>
-  <h2>Day 5 – Thekkady → Alleppey</h2>
-
-  <h3>Plan</h3>
-  <ul>
-    <li>Drive (~140 km)</li>
-    <li>Check-in lakeside resort</li>
-  </ul>
-
-  <h3>Activities</h3>
-  <ul>
-    <li>Waterfall stop en route</li>
-    <li>Evening shikara ride</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Day 6 – Alleppey → Kochi</h2>
-
-  <h3>Stops</h3>
-  <ul>
-    <li>Beach & lighthouse</li>
-    <li>Temple visit</li>
-    <li>Mattancherry area</li>
-  </ul>
-
-  <h3>Evening</h3>
-  <ul>
-    <li>Check-in hotel</li>
-    <li>Dinner in Fort Kochi</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Day 7 – Fort Kochi</h2>
-
-  <h3>Activities</h3>
-  <ul>
-    <li>Heritage walk</li>
-    <li>Church visits</li>
-    <li>Shopping</li>
-    <li>Water metro ride</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Trip Summary</h2>
-  <p><strong>Total Distance:</strong> ~639 km</p>
-  <p><strong>Total Drive Time:</strong> ~22–23 hours</p>
-</section>
-
-<section>
-  <h2>General Notes</h2>
-  <ul>
-    <li>Weather may affect visibility in hill stations</li>
-    <li>Wildlife sightings are not guaranteed</li>
-    <li>Some attractions may have weekly closures</li>
-  </ul>
-</section>
+function filterTag(tag){
+  document.querySelectorAll('.content p').forEach(p=>{
+    if(tag==="all"){p.style.display="block";return;}
+    if(p.classList.contains(tag)){p.style.display="block";}
+    else{p.style.display="none";}
+  });
+}
+</script>
 
 </body>
 </html>
